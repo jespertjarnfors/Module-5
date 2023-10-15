@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gifty</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/public/images/gift-bag.svg">
+    <script type="text/javascript" src="./js/script.js" defer></script>
+
+    <style>
+        * {
+            inset: unset;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+        }
+
+        body {
+            background-color: #e3f2fd;
+        }
+
+        .card {
+            border-radius: 0;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .card-body {
+            margin-bottom: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            color: darkslategrey;
+        }
+
+        .categoryBtn {
+            text-decoration: none;
+            color: black;
+        }
+
+        .categoryBtn:hover {
+            text-decoration: underline;
+            opacity: 0.75;
+        }
+
+        .card-img-top {
+            height: 15rem;
+            padding: 10px;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 3rem;
+            right: 0;
+            bottom: 0;
+            background-color: #f8f9fa;
+            padding: 20px;
+            width: 250px;
+        }
+
+        .navbar.sticky-top {
+            background-color: #ffffff;
+            z-index: 1000;
+        }
+
+        .card-title {
+            height: auto;
+        }
+
+        .bottom-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .accordion-button {
+            box-shadow: none;
+            border-color: rgba(0, 0, 0, .125);
+        }
+
+        .accordion-item {
+            border: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0, 0, 0, .125);
+        }
+    </style>
+    <!-- Template goes here -->
+    <template id="card-template">
+        <div class="card" style="width: 15rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6 class="card-title">Card title</h6>
+                <p class="card-description">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <div class="bottom-card">
+                    <h6 class="card-price">$49.99</h6>
+                    <h6 class="card-category">Random category</h6>
+                </div>
+            </div>
+        </div>
+    </template>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarScroll">
+                <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height:100px;">
+                    <a class="navbar-brand ms-3" href="#">
+                        <img src="./images/gift-bag.svg" width="30" height="30" alt="">
+                    </a>
+                    <li class="nav-item">
+                        <a href="eCommerce.html" class="nav-link active" aria-current="page">Gifty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="eCommerce.html" class="nav-link" value="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="lab10eChart.html" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input type="search" class="form-control" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark ms-2" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mt-5 container">
+        <div class="row">
+            <div class="col-md-9">
+                <div id="card-list" class="row gap-2"></div>
+            </div>
+            <div class="col-md-3">
+
+                <div class="sidebar">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Categories
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div><a id="mens" class="categoryBtn" value="men's clothing" href="">men's
+                                            clothing</a></div>
+                                    <div><a id="jewelery" class="categoryBtn" value="jewelery" href="">jewelery</a>
+                                    </div>
+                                    <div><a id="electronics" class="categoryBtn" value="electronics"
+                                            href="">electronics</a></div>
+                                    <div><a id="womens" class="categoryBtn" value="women's clothing" href="">women's
+                                            clothing</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script type="module" src="script.js"></script>
+</html>

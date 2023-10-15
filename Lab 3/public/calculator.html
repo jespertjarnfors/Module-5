@@ -1,0 +1,41 @@
+<html>
+<title>Calculator</title>
+<style>
+    .item {
+        margin: 5px;
+    }
+</style>
+<body>
+    <h1>Calculator</h1>
+    <span>
+        <section>
+            <label class="item" for="num1">Number one:</label><input class="item" type="text" id="num1"><br>
+            <label class="item" for="num2">Number one:</label><input class="item" type="text" id="num2"><br>
+
+            <input class="item button" type="button" onclick="calculateSum(this.value)" value="Add">
+            <input class="item button" type="button" onclick="calculateSum(this.value)" value="Subtract">
+            <input class="item button" type="button" onclick="calculateSum(this.value)" value="Multiply">
+            <input class="item button" type="button" onclick="calculateSum(this.value)" value="Divide"><br>
+
+            <label class="item">Results:</label><label class="item" id="results"></label>
+        </section>
+    </span>
+<script>
+    function calculateSum(value) 
+    {
+        value = value.toLowerCase();
+        // Converting the button-value into lowercase so that it fits my routes, and can be used in the query below.
+        
+        let num1 = document.getElementById('num1').value;
+        let num2 = document.getElementById('num2').value;
+
+        fetch(`./calculator/${value}?num1=${num1}&num2=${num2}`)
+            .then(response => response.json())
+            .then(data => { 
+                console.log(data);
+                document.getElementById('results').innerHTML = data.res;
+            })
+    }
+</script>
+</body>
+</html>

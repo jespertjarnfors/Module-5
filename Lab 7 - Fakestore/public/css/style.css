@@ -1,0 +1,83 @@
+* {
+    inset: unset !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+nav {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2) !important;
+}
+
+body {
+    background-color: #e3f2fd !important;
+}
+
+.card {
+    border-radius: 0 !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+}
+
+.card-body {
+    margin-bottom: none !important;
+    padding: 0 !important;
+    margin-bottom: 10px !important;
+}
+
+.card-description {
+    color: darkslategrey !important;
+}
+
+.categoryBtn {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.categoryBtn:hover {
+    text-decoration: underline !important;
+    opacity: 0.75 !important;
+}
+
+.card-img-top {
+    height: 15rem !important;
+    padding: 10px !important;
+}
+
+.sidebar {
+    position: fixed !important;
+    top: 3rem !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: #f8f9fa !important;
+    padding: 20px !important;
+    width: 250px !important;
+}
+
+.navbar.sticky-top {
+    background-color: #ffffff !important;
+    z-index: 1000 !important;
+}
+
+.card-title {
+    height: auto !important;
+}
+
+.bottom-card {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    margin-top: auto !important;
+}
+
+.accordion-button {
+    box-shadow: none !important;
+    border-color: rgba(0, 0, 0, .125) !important;
+}
+
+.accordion-item {
+    border: none !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+    border-color: rgba(0, 0, 0, .125) !important;
+}
